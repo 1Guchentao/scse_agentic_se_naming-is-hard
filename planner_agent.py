@@ -15,7 +15,9 @@ Use only the validated requirements in the user message. The robot observes
 blocked flags for FORWARD, LEFT and RIGHT, and an optional goal direction.
 Choose a safe next action, not a complete route or a guarantee of arrival.
 Return JSON with exactly these four fields:
-strategy: a brief description of goal preference and safe fallback;
+strategy: one sentence explicitly saying to prefer a clear goal direction
+          first, otherwise use the first unblocked fallback direction, and
+          STOP if no direction is clear. Do not omit the goal preference;
 decisions: [{"when":"CLEAR_TARGET","select":"TARGET"},
             {"when":"NO_CLEAR_TARGET","select":"FIRST_CLEAR"}];
 fallback_order: your chosen priority order of FORWARD, LEFT, RIGHT, once each;
@@ -55,6 +57,12 @@ def validate_plan(data):
     if not isinstance(data, dict) or set(data) != set(PLAN_SCHEMA["required"]):
         return False
     if not isinstance(data["strategy"], str) or not data["strategy"].strip():
+        return False
+    strategy = data["strategy"].lower()
+    if (not any(word in strategy for word in ("goal", "target"))
+            or not any(word in strategy for word in ("clear", "unblocked", "safe"))
+            or not any(word in strategy for word in ("otherwise", "fallback", "alternative"))
+            or "stop" not in strategy):
         return False
     if data["decisions"] != DECISIONS:
         return False

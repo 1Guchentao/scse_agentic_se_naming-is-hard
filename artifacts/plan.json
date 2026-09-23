@@ -1,5 +1,5 @@
 {
-  "strategy": "Choose the first unblocked direction for navigation",
+  "strategy": "Prefer a clear goal direction first, otherwise use the first unblocked fallback direction, and STOP if no direction is clear.",
   "decisions": [
     {
       "when": "CLEAR_TARGET",

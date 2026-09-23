@@ -84,11 +84,12 @@ independent attestation service.
 
 The first Developer reply failed validation: it returned a supplied target
 without testing whether that direction was blocked. That reply remains in the
-exchange records but was never accepted as `navigation_logic.py`. After making
-the safety condition explicit in the Developer prompt, a second real response
-passed the checks. The final source is that response, without manual code
-replacement. `evidence/sessions/` retains both the failed and successful local
-sessions; both finished with their temporary services closed.
+exchange records but was never accepted as `navigation_logic.py`. A later reply
+passed after the safety condition was made explicit. The Planner was then run
+again so its strategy sentence also states the goal preference. The final
+`navigation_logic.py` is a fresh Developer response to that revised plan, with
+no manual code replacement. `evidence/sessions/` retains every run, including
+the rejected one; each temporary model service was closed.
 
 ## Regenerate with local Qwen
 

@@ -23,7 +23,7 @@ REQUIREMENTS = {
     "safe_stop": True, "avoid_obstacles": True,
 }
 PLAN = {
-    "strategy": "Prefer a clear target, then the first safe alternative.",
+    "strategy": "Prefer a clear target, otherwise take the first safe alternative; STOP if none is clear.",
     "decisions": copy.deepcopy(planner_agent.DECISIONS),
     "fallback_order": ["FORWARD", "RIGHT", "LEFT"],
     "stop_condition": "NO_CLEAR_EXIT",
@@ -78,7 +78,7 @@ class PlannerTests(unittest.TestCase):
     def test_rejects_every_invalid_plan_field(self):
         invalid = [None, [], {}, {**PLAN, "extra": True}]
         for field, values in {
-            "strategy": [None, 1, " "],
+            "strategy": [None, 1, " ", "Choose the first unblocked direction for navigation"],
             "decisions": [None, [], list(reversed(PLAN["decisions"])),
                           [{"when": "CLEAR_TARGET", "select": "STOP"}, PLAN["decisions"][1]]],
             "fallback_order": [None, ["FORWARD"] * 3, ["LEFT", "RIGHT", "STOP"],

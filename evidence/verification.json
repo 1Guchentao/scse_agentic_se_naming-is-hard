@@ -9,17 +9,17 @@
   ],
   "context_isolation": "Only the preceding validated artifact is supplied as each user message.",
   "exchanges": {
-    "planner": "evidence/exchanges/planner-20260923T135309865023Z.json",
-    "developer": "evidence/exchanges/developer-20260923T140845734634Z.json"
+    "planner": "evidence/exchanges/planner-20260923T150813058978Z.json",
+    "developer": "evidence/exchanges/developer-20260923T150831753908Z.json"
   },
   "hash_convention": "SHA-256 of UTF-8 text with BOM removed and newlines normalized to LF.",
   "sha256": {
     "brief.txt": "5923fd335cacc360b84ef92add8b0ae0eab94b6778be7998b5d8bec0a1e780b8",
     "artifacts/requirements.json": "9b8e1bb90d8137854c476e9002db06ad1da6eb5fa9b04652d1c3d0f9aff48fb6",
-    "artifacts/plan.json": "29ff3ea8dcca2ff66f8dfae1bf0bb197f14e601a1584d0198da48f06df949787",
+    "artifacts/plan.json": "4dd2ccc291cf60facfe3167deffd8c26e5b07160f7f09119f0e84aeca72e6355",
     "navigation_logic.py": "4d28d2884e456007d62851c71a6512d7ec196e8b6cdf44f83f875158dbe793dd",
-    "evidence/exchanges/planner-20260923T135309865023Z.json": "a68d582e092cac03e700722dc07eff1e4d89eb6973709be817a139cb5abeae7b",
-    "evidence/exchanges/developer-20260923T140845734634Z.json": "e9644942c46bc4dcc497337941957494cd0bf00222d566c247cb1580fdb40368"
+    "evidence/exchanges/planner-20260923T150813058978Z.json": "a350e8982fdce859f3a6b18029db834f706b7d3d04d8571c96df60be7c25e203",
+    "evidence/exchanges/developer-20260923T150831753908Z.json": "a05ee420d8907d9fa781483bc0f5ffff46f32290c24848a95eaabf1388b2fdcf"
   },
   "cases": [
     {
