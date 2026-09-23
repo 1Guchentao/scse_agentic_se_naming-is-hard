@@ -1,0 +1,24 @@
+{
+  "group": "naming-is-hard",
+  "requirements_source": {
+    "repository": "https://github.com/1Guchentao/scse_agentic_se_naming-is-hard",
+    "commit": "b5b6b32f77a23a0375d0f744492b675f6ef4df7e",
+    "artifact_status": "Retained from the group's existing work; not a new Analyst inference result.",
+    "preserved_git_blob_ids": {
+      "brief.txt": "2dbfe652062e5d2659b62a620a8dc86486d43d33",
+      "artifacts/requirements.json": "e27c2634051063dce6d9cdb2b4ade4d5c2af355b"
+    },
+    "sha256_utf8_lf": {
+      "brief.txt": "5923fd335cacc360b84ef92add8b0ae0eab94b6778be7998b5d8bec0a1e780b8",
+      "artifacts/requirements.json": "9b8e1bb90d8137854c476e9002db06ad1da6eb5fa9b04652d1c3d0f9aff48fb6"
+    }
+  },
+  "plan_and_develop_source": {
+    "repository": "https://github.com/prabhatram/scse_plan_and_develop",
+    "commit": "8d73372049699eda1814cb87b88cd5c4fa186853",
+    "document": "SCSE '26 - Project Instructions - Plan and Develop.pdf",
+    "sha256_bytes": "085601f9a42e0ae1a8ff4150497f31c81691b5471741098c97c72b991cfa4ef7",
+    "starter_files": ["planner_agent.py", "run_planner.py", "developer_agent.py", "run_developer.py"]
+  },
+  "security_change": "Removed the hardcoded cloud credential and tracked bytecode from the current tree. Credential revocation remains an owner action; old remote history is not rewritten."
+}

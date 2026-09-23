@@ -1,0 +1,34 @@
+{
+  "started_utc": "2026-09-23T13:53:07.585405+00:00",
+  "model": "qwen2.5:3b",
+  "free_ram_gib_before": 6.19,
+  "inference_threads": 2,
+  "gpu_layers": 0,
+  "stages_completed": [
+    "planner"
+  ],
+  "result": "FAILED",
+  "automatic_model_retries": 0,
+  "ollama_version": "0.34.2",
+  "installed_model": {
+    "name": "qwen2.5:3b",
+    "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "size": 1929912432,
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "3.1B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 2048
+    }
+  },
+  "finished_utc": "2026-09-23T13:53:43.082873+00:00",
+  "remaining_model_processes": [],
+  "port_11434_still_listening": false,
+  "cleanup_ok": true
+}

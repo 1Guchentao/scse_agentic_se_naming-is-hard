@@ -1,0 +1,105 @@
+{
+  "stage": "planner",
+  "started_utc": "2026-09-23T13:53:09.865023+00:00",
+  "finished_utc": "2026-09-23T13:53:27.198002+00:00",
+  "request": {
+    "model": "qwen2.5:3b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the Planner for a mobile robot navigation component.\nUse only the validated requirements in the user message. The robot observes\nblocked flags for FORWARD, LEFT and RIGHT, and an optional goal direction.\nChoose a safe next action, not a complete route or a guarantee of arrival.\nReturn JSON with exactly these four fields:\nstrategy: a brief description of goal preference and safe fallback;\ndecisions: [{\"when\":\"CLEAR_TARGET\",\"select\":\"TARGET\"},\n            {\"when\":\"NO_CLEAR_TARGET\",\"select\":\"FIRST_CLEAR\"}];\nfallback_order: your chosen priority order of FORWARD, LEFT, RIGHT, once each;\nstop_condition: \"NO_CLEAR_EXIT\".\nCLEAR_TARGET means a goal direction is supplied and is not blocked.\nNO_CLEAR_TARGET means the goal is absent or blocked. FIRST_CLEAR chooses the\nfirst unblocked direction in fallback_order. STOP when all three are blocked.\nTARGET and FIRST_CLEAR are decision selectors, not additional robot actions.\nDo not add fields, conversation history, Markdown, or Python code.\n"
+      },
+      {
+        "role": "user",
+        "content": "{\"goal\": \"Develop navigation logic for a mobile robot\", \"allowed_actions\": [\"FORWARD\", \"LEFT\", \"RIGHT\", \"STOP\"], \"safe_stop\": true, \"avoid_obstacles\": true}"
+      }
+    ],
+    "stream": false,
+    "keep_alive": 0,
+    "options": {
+      "num_gpu": 0,
+      "num_thread": 2,
+      "num_ctx": 2048,
+      "num_predict": 768,
+      "temperature": 0
+    },
+    "format": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "decisions",
+        "fallback_order",
+        "stop_condition"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisions": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "when",
+              "select"
+            ],
+            "properties": {
+              "when": {
+                "enum": [
+                  "CLEAR_TARGET",
+                  "NO_CLEAR_TARGET"
+                ]
+              },
+              "select": {
+                "enum": [
+                  "TARGET",
+                  "FIRST_CLEAR"
+                ]
+              }
+            }
+          }
+        },
+        "fallback_order": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "enum": [
+              "FORWARD",
+              "LEFT",
+              "RIGHT"
+            ]
+          }
+        },
+        "stop_condition": {
+          "enum": [
+            "NO_CLEAR_EXIT"
+          ]
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "qwen2.5:3b",
+    "created_at": "2026-09-23T13:53:27.1974319Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"strategy\": \"Choose the first unblocked direction for navigation\",\n  \"decisions\": [\n    {\"when\": \"CLEAR_TARGET\", \"select\": \"TARGET\"},\n    {\"when\": \"NO_CLEAR_TARGET\", \"select\": \"FIRST_CLEAR\"}\n  ],\n  \"fallback_order\": [\"FORWARD\", \"LEFT\", \"RIGHT\"],\n  \"stop_condition\": \"NO_CLEAR_EXIT\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 17327483900,
+    "load_duration": 4067327100,
+    "prompt_eval_count": 254,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 5924977000,
+    "eval_count": 80,
+    "eval_duration": 7322467000
+  },
+  "meaning": "Original exchange; stage validation takes place after recording."
+}

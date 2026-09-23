@@ -1,0 +1,19 @@
+{
+  "strategy": "Choose the first unblocked direction for navigation",
+  "decisions": [
+    {
+      "when": "CLEAR_TARGET",
+      "select": "TARGET"
+    },
+    {
+      "when": "NO_CLEAR_TARGET",
+      "select": "FIRST_CLEAR"
+    }
+  ],
+  "fallback_order": [
+    "FORWARD",
+    "LEFT",
+    "RIGHT"
+  ],
+  "stop_condition": "NO_CLEAR_EXIT"
+}

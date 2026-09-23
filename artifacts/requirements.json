@@ -1,0 +1,11 @@
+{
+    "goal": "Develop navigation logic for a mobile robot",
+    "allowed_actions": [
+        "FORWARD",
+        "LEFT",
+        "RIGHT",
+        "STOP"
+    ],
+    "safe_stop": true,
+    "avoid_obstacles": true
+}
