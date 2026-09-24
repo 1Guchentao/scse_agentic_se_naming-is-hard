@@ -1,0 +1,105 @@
+{
+  "stage": "planner",
+  "started_utc": "2026-09-24T02:56:12.693786+00:00",
+  "finished_utc": "2026-09-24T02:56:31.019190+00:00",
+  "request": {
+    "model": "qwen2.5:3b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the Planner for a mobile robot navigation component.\nUse only the validated requirements in the user message. The robot observes\nblocked flags for FORWARD, LEFT and RIGHT, and an optional goal direction.\nChoose a safe next action, not a complete route or a guarantee of arrival.\nReturn JSON with exactly these four fields:\nstrategy: one sentence explicitly saying to prefer a clear goal direction\n          first, otherwise use the first unblocked fallback direction, and\n          STOP if no direction is clear. Do not omit the goal preference;\ndecisions: [{\"when\":\"CLEAR_TARGET\",\"select\":\"TARGET\"},\n            {\"when\":\"NO_CLEAR_TARGET\",\"select\":\"FIRST_CLEAR\"}];\nfallback_order: [\"FORWARD\", \"LEFT\", \"RIGHT\"], retaining the previous stage's order;\nstop_condition: \"NO_CLEAR_EXIT\".\nCLEAR_TARGET means a goal direction is supplied and is not blocked.\nNO_CLEAR_TARGET means the goal is absent or blocked. FIRST_CLEAR chooses the\nfirst unblocked direction in fallback_order. STOP when all three are blocked.\nTARGET and FIRST_CLEAR are decision selectors, not additional robot actions.\nDo not add fields, conversation history, Markdown, or Python code.\n"
+      },
+      {
+        "role": "user",
+        "content": "{\"goal\": \"Navigate towards the goal if safe and possible\", \"allowed_actions\": [\"FORWARD\", \"LEFT\", \"RIGHT\", \"STOP\"], \"safe_stop\": true, \"avoid_obstacles\": true}"
+      }
+    ],
+    "stream": false,
+    "keep_alive": 0,
+    "options": {
+      "num_gpu": 0,
+      "num_thread": 2,
+      "num_ctx": 2048,
+      "num_predict": 768,
+      "temperature": 0
+    },
+    "format": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "decisions",
+        "fallback_order",
+        "stop_condition"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisions": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "when",
+              "select"
+            ],
+            "properties": {
+              "when": {
+                "enum": [
+                  "CLEAR_TARGET",
+                  "NO_CLEAR_TARGET"
+                ]
+              },
+              "select": {
+                "enum": [
+                  "TARGET",
+                  "FIRST_CLEAR"
+                ]
+              }
+            }
+          }
+        },
+        "fallback_order": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "enum": [
+              "FORWARD",
+              "LEFT",
+              "RIGHT"
+            ]
+          }
+        },
+        "stop_condition": {
+          "enum": [
+            "NO_CLEAR_EXIT"
+          ]
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "qwen2.5:3b",
+    "created_at": "2026-09-24T02:56:31.0186324Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"strategy\": \"Prefer to move towards the goal direction if it is clear, otherwise choose the first unblocked fallback direction, and STOP if both are blocked.\",\n  \"decisions\": [\n    {\"when\": \"CLEAR_TARGET\", \"select\": \"TARGET\"},\n    {\"when\": \"NO_CLEAR_TARGET\", \"select\": \"FIRST_CLEAR\"}\n  ],\n  \"fallback_order\": [\"FORWARD\", \"LEFT\", \"RIGHT\"],\n  \"stop_condition\": \"NO_CLEAR_EXIT\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 18319750900,
+    "load_duration": 2554728200,
+    "prompt_eval_count": 288,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 6731111000,
+    "eval_count": 100,
+    "eval_duration": 9013558000
+  },
+  "meaning": "Original exchange; stage validation takes place after recording."
+}

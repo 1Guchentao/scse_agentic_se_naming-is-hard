@@ -2,7 +2,7 @@
 
 import argparse
 
-from developer_agent import _restricted_function
+from developer_agent import load_decider
 from inspect_results import inspect
 from workspace_io import ROOT
 
@@ -13,10 +13,17 @@ def main(argv=None):
     parser.add_argument("--target", choices=("FORWARD", "LEFT", "RIGHT"))
     args = parser.parse_args(argv)
     inspect()
-    source = (ROOT / "navigation_logic.py").read_text(encoding="utf-8")
-    navigate = _restricted_function(source)
-    obstacles = {move: move in args.blocked for move in ("FORWARD", "LEFT", "RIGHT")}
-    print(navigate(obstacles, args.target))
+    source = (ROOT / "generated" / "navigation_logic.py").read_text(encoding="utf-8")
+    decide_next_move = load_decider(source)
+    state = {
+        "front_blocked": "FORWARD" in args.blocked,
+        "left_blocked": "LEFT" in args.blocked,
+        "right_blocked": "RIGHT" in args.blocked,
+        "goal_ahead": args.target == "FORWARD",
+        "goal_on_left": args.target == "LEFT",
+        "goal_on_right": args.target == "RIGHT",
+    }
+    print(decide_next_move(state))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,346 @@
+{
+  "result": "PASS",
+  "navigation_cases": 32,
+  "scope": "All valid single-step inputs: 8 obstacle patterns times 4 optional target values.",
+  "excluded": [
+    "Physical robot testing",
+    "Route completion",
+    "Malformed sensor input"
+  ],
+  "context_isolation": "Only the preceding validated artifact is supplied as each user message.",
+  "exchanges": {
+    "planner": "evidence/exchanges/planner-20260923T150813058978Z.json",
+    "developer": "evidence/exchanges/developer-20260923T150831753908Z.json"
+  },
+  "hash_convention": "SHA-256 of UTF-8 text with BOM removed and newlines normalized to LF.",
+  "sha256": {
+    "brief.txt": "5923fd335cacc360b84ef92add8b0ae0eab94b6778be7998b5d8bec0a1e780b8",
+    "artifacts/requirements.json": "9b8e1bb90d8137854c476e9002db06ad1da6eb5fa9b04652d1c3d0f9aff48fb6",
+    "artifacts/plan.json": "4dd2ccc291cf60facfe3167deffd8c26e5b07160f7f09119f0e84aeca72e6355",
+    "navigation_logic.py": "4d28d2884e456007d62851c71a6512d7ec196e8b6cdf44f83f875158dbe793dd",
+    "evidence/exchanges/planner-20260923T150813058978Z.json": "a350e8982fdce859f3a6b18029db834f706b7d3d04d8571c96df60be7c25e203",
+    "evidence/exchanges/developer-20260923T150831753908Z.json": "a05ee420d8907d9fa781483bc0f5ffff46f32290c24848a95eaabf1388b2fdcf"
+  },
+  "cases": [
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": null,
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": "FORWARD",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": "LEFT",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": "RIGHT",
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": null,
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": "FORWARD",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": "LEFT",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": "RIGHT",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": null,
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": "FORWARD",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": "LEFT",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": "RIGHT",
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": null,
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": "FORWARD",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": "LEFT",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": false,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": "RIGHT",
+      "expected": "FORWARD",
+      "actual": "FORWARD"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": null,
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": "FORWARD",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": "LEFT",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": false
+      },
+      "target": "RIGHT",
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": null,
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": "FORWARD",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": "LEFT",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": false,
+        "RIGHT": true
+      },
+      "target": "RIGHT",
+      "expected": "LEFT",
+      "actual": "LEFT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": null,
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": "FORWARD",
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": "LEFT",
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": false
+      },
+      "target": "RIGHT",
+      "expected": "RIGHT",
+      "actual": "RIGHT"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": null,
+      "expected": "STOP",
+      "actual": "STOP"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": "FORWARD",
+      "expected": "STOP",
+      "actual": "STOP"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": "LEFT",
+      "expected": "STOP",
+      "actual": "STOP"
+    },
+    {
+      "obstacles": {
+        "FORWARD": true,
+        "LEFT": true,
+        "RIGHT": true
+      },
+      "target": "RIGHT",
+      "expected": "STOP",
+      "actual": "STOP"
+    }
+  ]
+}

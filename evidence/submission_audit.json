@@ -1,0 +1,68 @@
+{
+  "checked_utc": "2026-09-24T03:08:03.836382+00:00",
+  "result": "PASS",
+  "group": "naming-is-hard",
+  "required_files": [
+    "test_analyst.py",
+    "test_planner.py",
+    "test_developer.py",
+    "test_generated_navigation_logic.py",
+    "artifacts/requirements.json",
+    "artifacts/plan.json",
+    "artifacts/navigation_logic.py",
+    "generated/navigation_logic.py"
+  ],
+  "current_artifact_sha256_utf8_lf": {
+    "test_analyst.py": "aac57193c6f6892e749cf795376ec94db2e71b6e6847d4082570f0fb157c2146",
+    "test_planner.py": "b03611b45bee28f65bdcd561b7b5cae9277b732f52175715e09c369924fece2e",
+    "test_developer.py": "43ab598e8fd7ca6f9f4385897eda8be95f5cce5d1bc6747db88d06a82d6ede10",
+    "test_generated_navigation_logic.py": "14621550612a900a3d2c623aed5b4fd3479ba13c7502f966affbbbcff4c83372",
+    "artifacts/requirements.json": "9e89d69da72bd164b109dfe88534c03f88ed04a17f78f9592c2e00abbc2b7d41",
+    "artifacts/plan.json": "4dd2ccc291cf60facfe3167deffd8c26e5b07160f7f09119f0e84aeca72e6355",
+    "artifacts/navigation_logic.py": "9c2c8b3368a3a43a8870dd0de415a47d0aacf03a7115fb9919caa268d38993a8",
+    "generated/navigation_logic.py": "9c2c8b3368a3a43a8870dd0de415a47d0aacf03a7115fb9919caa268d38993a8"
+  },
+  "unchanged_original_brief": true,
+  "previous_navigation_snapshot_matches_commit": "3b5d4842d21fb90ff5158474818e5dd1232cc25e",
+  "matching_real_model_exchanges": {
+    "analyst": "evidence/exchanges/analyst-20260924T025835282505Z.json",
+    "planner": "evidence/exchanges/planner-20260924T025847924703Z.json",
+    "developer": "evidence/exchanges/developer-20260924T030315447063Z.json"
+  },
+  "boolean_states_checked": 64,
+  "offline_runs": [
+    {
+      "run_utc": "2026-09-24T03:06:25.648559+00:00",
+      "python": "3.10.11",
+      "result": "PASS",
+      "tests_run": 108,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "evidence/offline/python-3.10.11.txt",
+      "scope": "Offline behavior and infrastructure tests; real model smoke runs are recorded separately."
+    },
+    {
+      "run_utc": "2026-09-24T03:06:27.349359+00:00",
+      "python": "3.12.0",
+      "result": "PASS",
+      "tests_run": 108,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "evidence/offline/python-3.12.0.txt",
+      "scope": "Offline behavior and infrastructure tests; real model smoke runs are recorded separately."
+    }
+  ],
+  "deliberate_bug_failures": 18,
+  "restored_exact_original_bytes": true,
+  "testing_sessions_checked": 4,
+  "all_owned_services_cleaned_up": true,
+  "testing_source_pdf_sha256": "bf66b90e556a30993916babeb703a2033d067bcf663f24c742e56215ba1cfe8c",
+  "not_verified": [
+    "Physical robot or whole-route performance",
+    "Missing/non-boolean sensor inputs",
+    "Group physical attendance",
+    "Moodle submission"
+  ]
+}

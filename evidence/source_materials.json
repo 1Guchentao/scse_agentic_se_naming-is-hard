@@ -3,7 +3,7 @@
   "requirements_source": {
     "repository": "https://github.com/1Guchentao/scse_agentic_se_naming-is-hard",
     "commit": "b5b6b32f77a23a0375d0f744492b675f6ef4df7e",
-    "artifact_status": "Retained from the group's existing work; not a new Analyst inference result.",
+    "artifact_status": "Historical Requirements Engineering input retained during Plan and Develop. Testing regenerates requirements through a new real Analyst run; see evidence/verification.json for the current chain.",
     "preserved_git_blob_ids": {
       "brief.txt": "2dbfe652062e5d2659b62a620a8dc86486d43d33",
       "artifacts/requirements.json": "e27c2634051063dce6d9cdb2b4ade4d5c2af355b"
@@ -19,6 +19,19 @@
     "document": "SCSE '26 - Project Instructions - Plan and Develop.pdf",
     "sha256_bytes": "085601f9a42e0ae1a8ff4150497f31c81691b5471741098c97c72b991cfa4ef7",
     "starter_files": ["planner_agent.py", "run_planner.py", "developer_agent.py", "run_developer.py"]
+  },
+  "testing_source": {
+    "repository": "https://github.com/prabhatram/scse-26-project-testing",
+    "commit": "35c6700b663e3a29ecdc03bcc98345168f390ff6",
+    "document": "SCSE '26 - Project Instructions - Testing.pdf",
+    "sha256_bytes": "bf66b90e556a30993916babeb703a2033d067bcf663f24c742e56215ba1cfe8c",
+    "starter_files": ["test_generated_navigation_logic.py"],
+    "integration": "Teacher repository cloned locally and its history merged into the existing group repository."
+  },
+  "previous_stage": {
+    "commit": "3b5d4842d21fb90ff5158474818e5dd1232cc25e",
+    "snapshots": "evidence/previous_stage/",
+    "retention": "The original navigation function is retained unchanged in syntax and behavior; only the six-boolean public adapter is new."
   },
   "security_change": "Removed the hardcoded cloud credential and tracked bytecode from the current tree. Credential revocation remains an owner action; old remote history is not rewritten."
 }

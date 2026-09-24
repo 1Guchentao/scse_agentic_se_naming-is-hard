@@ -16,6 +16,7 @@ def main(argv=None):
     plan = run_planner(requirement, trace_folder=ROOT / "evidence" / "exchanges")
     save_json(ROOT / "artifacts" / "plan.json", plan)
     print("Validated plan saved to artifacts/plan.json.")
+    print((ROOT / "artifacts" / "plan.json").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

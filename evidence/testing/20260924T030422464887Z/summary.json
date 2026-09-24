@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-09-24T03:04:22.464887+00:00",
+  "result": "PASS",
+  "scope": "One deliberately injected wrong action; not a complete mutation-testing campaign.",
+  "file": "generated/navigation_logic.py",
+  "original_sha256_bytes": "9c2c8b3368a3a43a8870dd0de415a47d0aacf03a7115fb9919caa268d38993a8",
+  "baseline": {
+    "exit_code": 0,
+    "log": "evidence/testing/20260924T030422464887Z/baseline.txt"
+  },
+  "mutation": {
+    "before": "return navigate(obstacles, \"FORWARD\")",
+    "after": "return \"STOP\"",
+    "description": "Stop incorrectly when a forward goal is clear."
+  },
+  "mutated_sha256_bytes": "4239964f1d7a3d957b91d038a374041ebbbbcf76cf036bde0c0e5858d2580ecb",
+  "with_bug": {
+    "exit_code": 1,
+    "log": "evidence/testing/20260924T030422464887Z/with_bug.txt"
+  },
+  "restored": {
+    "exit_code": 0,
+    "log": "evidence/testing/20260924T030422464887Z/restored.txt"
+  },
+  "restored_sha256_bytes": "9c2c8b3368a3a43a8870dd0de415a47d0aacf03a7115fb9919caa268d38993a8",
+  "finished_utc": "2026-09-24T03:04:23.046413+00:00"
+}

@@ -1,4 +1,4 @@
-"""Generate navigation code, accepting it only after all 32 cases pass."""
+"""Generate the public navigation entrypoint and verify all 64 boolean states."""
 
 import argparse
 
@@ -14,8 +14,11 @@ def main(argv=None):
         parser.error("Use --allow-model to generate code. No model was contacted.")
     plan = read_json(ROOT / "artifacts" / "plan.json")
     source = run_developer(plan, trace_folder=ROOT / "evidence" / "exchanges")
+    save_text(ROOT / "generated" / "navigation_logic.py", source)
+    save_text(ROOT / "artifacts" / "navigation_logic.py", source)
     save_text(ROOT / "navigation_logic.py", source)
-    print("navigation_logic.py saved after 32 navigation cases passed.")
+    print("Generated navigation saved after 64 cases passed; artifacts and legacy mirrors updated.")
+    print(source)
 
 
 if __name__ == "__main__":

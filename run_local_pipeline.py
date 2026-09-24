@@ -15,7 +15,7 @@ import time
 from urllib.request import ProxyHandler, Request, build_opener
 
 from local_qwen import MODEL
-from workspace_io import ROOT, save_json
+from workspace_io import ROOT, save_json, save_text
 
 
 def _memory_gib():
@@ -56,8 +56,8 @@ def _api(path, data=None):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--allow-model", action="store_true")
-    parser.add_argument("--stage", choices=("both", "planner", "developer"), default="both",
-                        help="Choose a stage explicitly; the default generates both in sequence.")
+    parser.add_argument("--stage", choices=("both", "planner", "developer", "testing"), default="both",
+                        help="'testing' runs all three real-agent smoke tests, sequentially.")
     parser.add_argument("--ollama", type=Path,
                         default=Path(os.environ.get("LOCALAPPDATA", "")) / "Programs" / "Ollama" / "ollama.exe")
     args = parser.parse_args(argv)
@@ -87,8 +87,11 @@ def main(argv=None):
         "free_ram_gib_before": round(available, 2), "inference_threads": 2, "gpu_layers": 0,
         "stages_completed": [], "result": "FAILED", "automatic_model_retries": 0,
     }
-    stages = ("planner", "developer") if args.stage == "both" else (args.stage,)
+    stages = (("analyst", "planner", "developer") if args.stage == "testing" else
+              ("planner", "developer") if args.stage == "both" else (args.stage,))
     record["stages_requested"] = list(stages)
+    record["test_outputs"] = {}
+    session_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     server = None
     with (evidence / "local_service.log").open("wb") as log:
         try:
@@ -119,7 +122,8 @@ def main(argv=None):
                     raise RuntimeError("Less than 3 GiB is available before the next model call.")
                 print(f"Running {stage}: CPU only, two inference threads, one request.", flush=True)
                 completed = subprocess.run(
-                    [sys.executable, str(ROOT / f"run_{stage}.py"), "--allow-model"],
+                    [sys.executable, str(ROOT / f"{'test' if args.stage == 'testing' else 'run'}_{stage}.py"),
+                     "--allow-model"],
                     cwd=ROOT, env=environment, timeout=150, capture_output=True,
                     text=True, encoding="utf-8", errors="replace",
                     creationflags=subprocess.CREATE_NO_WINDOW)
@@ -127,6 +131,9 @@ def main(argv=None):
                     print(completed.stdout, end="", flush=True)
                 if completed.stderr:
                     print(completed.stderr, end="", file=sys.stderr, flush=True)
+                output_path = evidence / "smoke" / session_id / (stage + ".txt")
+                save_text(output_path, completed.stdout + completed.stderr)
+                record["test_outputs"][stage] = output_path.relative_to(ROOT).as_posix()
                 completed.check_returncode()
                 deadline = time.monotonic() + 15
                 while _api("/api/ps").get("models"):
@@ -137,7 +144,7 @@ def main(argv=None):
             if "developer" in stages:
                 from inspect_results import inspect
                 save_json(evidence / "verification.json", inspect())
-                print("PASS: 32 navigation cases and matching recorded model exchanges.", flush=True)
+                print("PASS: 64 navigation states and matching Analyst/Planner/Developer exchanges.", flush=True)
             record["result"] = "PASS"
         except Exception as error:
             record["failure_type"] = type(error).__name__

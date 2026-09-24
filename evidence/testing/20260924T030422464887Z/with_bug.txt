@@ -1,0 +1,311 @@
+test_all_blocked_stops_even_with_goal (__main__.GeneratedNavigationTests) ... ok
+test_blocked_goal_uses_clear_fallback (__main__.GeneratedNavigationTests) ... ok
+test_clear_left_goal_beats_clear_front_fallback (__main__.GeneratedNavigationTests) ... ok
+test_clear_right_goal_beats_clear_front_fallback (__main__.GeneratedNavigationTests) ... ok
+test_multiple_goals_prefer_first_clear_goal (__main__.GeneratedNavigationTests) ... FAIL
+test_no_goal_uses_original_fallback_order (__main__.GeneratedNavigationTests) ... ok
+test_repeated_calls_do_not_retain_previous_state (__main__.GeneratedNavigationTests) ... ok
+test_state_000000 (__main__.GeneratedNavigationTests) ... ok
+test_state_000001 (__main__.GeneratedNavigationTests) ... ok
+test_state_000010 (__main__.GeneratedNavigationTests) ... ok
+test_state_000011 (__main__.GeneratedNavigationTests) ... ok
+test_state_000100 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_000101 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_000110 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_000111 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_001000 (__main__.GeneratedNavigationTests) ... ok
+test_state_001001 (__main__.GeneratedNavigationTests) ... ok
+test_state_001010 (__main__.GeneratedNavigationTests) ... ok
+test_state_001011 (__main__.GeneratedNavigationTests) ... ok
+test_state_001100 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_001101 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_001110 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_001111 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_010000 (__main__.GeneratedNavigationTests) ... ok
+test_state_010001 (__main__.GeneratedNavigationTests) ... ok
+test_state_010010 (__main__.GeneratedNavigationTests) ... ok
+test_state_010011 (__main__.GeneratedNavigationTests) ... ok
+test_state_010100 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_010101 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_010110 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_010111 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_011000 (__main__.GeneratedNavigationTests) ... ok
+test_state_011001 (__main__.GeneratedNavigationTests) ... ok
+test_state_011010 (__main__.GeneratedNavigationTests) ... ok
+test_state_011011 (__main__.GeneratedNavigationTests) ... ok
+test_state_011100 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_011101 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_011110 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_011111 (__main__.GeneratedNavigationTests) ... FAIL
+test_state_100000 (__main__.GeneratedNavigationTests) ... ok
+test_state_100001 (__main__.GeneratedNavigationTests) ... ok
+test_state_100010 (__main__.GeneratedNavigationTests) ... ok
+test_state_100011 (__main__.GeneratedNavigationTests) ... ok
+test_state_100100 (__main__.GeneratedNavigationTests) ... ok
+test_state_100101 (__main__.GeneratedNavigationTests) ... ok
+test_state_100110 (__main__.GeneratedNavigationTests) ... ok
+test_state_100111 (__main__.GeneratedNavigationTests) ... ok
+test_state_101000 (__main__.GeneratedNavigationTests) ... ok
+test_state_101001 (__main__.GeneratedNavigationTests) ... ok
+test_state_101010 (__main__.GeneratedNavigationTests) ... ok
+test_state_101011 (__main__.GeneratedNavigationTests) ... ok
+test_state_101100 (__main__.GeneratedNavigationTests) ... ok
+test_state_101101 (__main__.GeneratedNavigationTests) ... ok
+test_state_101110 (__main__.GeneratedNavigationTests) ... ok
+test_state_101111 (__main__.GeneratedNavigationTests) ... ok
+test_state_110000 (__main__.GeneratedNavigationTests) ... ok
+test_state_110001 (__main__.GeneratedNavigationTests) ... ok
+test_state_110010 (__main__.GeneratedNavigationTests) ... ok
+test_state_110011 (__main__.GeneratedNavigationTests) ... ok
+test_state_110100 (__main__.GeneratedNavigationTests) ... ok
+test_state_110101 (__main__.GeneratedNavigationTests) ... ok
+test_state_110110 (__main__.GeneratedNavigationTests) ... ok
+test_state_110111 (__main__.GeneratedNavigationTests) ... ok
+test_state_111000 (__main__.GeneratedNavigationTests) ... ok
+test_state_111001 (__main__.GeneratedNavigationTests) ... ok
+test_state_111010 (__main__.GeneratedNavigationTests) ... ok
+test_state_111011 (__main__.GeneratedNavigationTests) ... ok
+test_state_111100 (__main__.GeneratedNavigationTests) ... ok
+test_state_111101 (__main__.GeneratedNavigationTests) ... ok
+test_state_111110 (__main__.GeneratedNavigationTests) ... ok
+test_state_111111 (__main__.GeneratedNavigationTests) ... ok
+test_teacher_example (__main__.GeneratedNavigationTests) ... FAIL
+
+======================================================================
+FAIL: test_multiple_goals_prefer_first_clear_goal (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 58, in test_multiple_goals_prefer_first_clear_goal
+    self.assert_action(sensor_state(goals=(True, True, True)), "FORWARD")
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_000100 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_000101 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_000110 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_000111 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_001100 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_001101 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_001110 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_001111 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_010100 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_010101 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_010110 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_010111 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_011100 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_011101 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_state_011110 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': False}
+
+======================================================================
+FAIL: test_state_011111 (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 74, in test
+    self.assert_action(sensor_state(blocked, goals), expected)
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': True, 'right_blocked': True, 'goal_ahead': True, 'goal_on_left': True, 'goal_on_right': True}
+
+======================================================================
+FAIL: test_teacher_example (__main__.GeneratedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 37, in test_teacher_example
+    self.assert_action(sensor_state(goals=(True, False, False)), "FORWARD")
+  File "D:\Projects\PyCharm Projects\pension_swb_cgss\网页设计作业汇总\scse_agentic_se_naming-is-hard\test_generated_navigation_logic.py", line 30, in assert_action
+    self.assertEqual(actual, expected, state)
+AssertionError: 'STOP' != 'FORWARD'
+- STOP
++ FORWARD
+ : {'front_blocked': False, 'left_blocked': False, 'right_blocked': False, 'goal_ahead': True, 'goal_on_left': False, 'goal_on_right': False}
+
+----------------------------------------------------------------------
+Ran 72 tests in 0.008s
+
+FAILED (failures=18)

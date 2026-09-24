@@ -1,19 +1,25 @@
 {
-  "started_utc": "2026-09-24T03:03:14.258162+00:00",
+  "started_utc": "2026-09-24T02:58:34.070966+00:00",
   "model": "qwen2.5:3b",
-  "free_ram_gib_before": 7.66,
+  "free_ram_gib_before": 7.5,
   "inference_threads": 2,
   "gpu_layers": 0,
   "stages_completed": [
+    "analyst",
+    "planner",
     "developer"
   ],
   "result": "PASS",
   "automatic_model_retries": 0,
   "stages_requested": [
+    "analyst",
+    "planner",
     "developer"
   ],
   "test_outputs": {
-    "developer": "evidence/smoke/20260924T030314258162Z/developer.txt"
+    "analyst": "evidence/smoke/20260924T025834070966Z/analyst.txt",
+    "planner": "evidence/smoke/20260924T025834070966Z/planner.txt",
+    "developer": "evidence/smoke/20260924T025834070966Z/developer.txt"
   },
   "ollama_version": "0.34.2",
   "installed_model": {
@@ -34,7 +40,7 @@
     }
   },
   "current_stage": "developer",
-  "finished_utc": "2026-09-24T03:03:48.293658+00:00",
+  "finished_utc": "2026-09-24T02:59:40.453444+00:00",
   "remaining_model_processes": [],
   "port_11434_still_listening": false,
   "cleanup_ok": true

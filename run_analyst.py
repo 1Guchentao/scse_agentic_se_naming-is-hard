@@ -1,4 +1,4 @@
-"""Optional regeneration of requirements; not needed for the submitted artifact."""
+"""Generate and display validated requirements from the original robot brief."""
 
 import argparse
 
@@ -16,6 +16,7 @@ def main(argv=None):
     result = run_analyst(brief, trace_folder=ROOT / "evidence" / "exchanges")
     save_json(ROOT / "artifacts" / "requirements.json", result)
     print("Validated requirements saved. Regenerate downstream artifacts before using them.")
+    print((ROOT / "artifacts" / "requirements.json").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

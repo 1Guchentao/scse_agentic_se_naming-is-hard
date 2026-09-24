@@ -1,0 +1,155 @@
+test_all_blocked_stops_even_with_goal (test_generated_navigation_logic.GeneratedNavigationTests.test_all_blocked_stops_even_with_goal) ... ok
+test_blocked_goal_uses_clear_fallback (test_generated_navigation_logic.GeneratedNavigationTests.test_blocked_goal_uses_clear_fallback) ... ok
+test_clear_left_goal_beats_clear_front_fallback (test_generated_navigation_logic.GeneratedNavigationTests.test_clear_left_goal_beats_clear_front_fallback) ... ok
+test_clear_right_goal_beats_clear_front_fallback (test_generated_navigation_logic.GeneratedNavigationTests.test_clear_right_goal_beats_clear_front_fallback) ... ok
+test_multiple_goals_prefer_first_clear_goal (test_generated_navigation_logic.GeneratedNavigationTests.test_multiple_goals_prefer_first_clear_goal) ... ok
+test_no_goal_uses_original_fallback_order (test_generated_navigation_logic.GeneratedNavigationTests.test_no_goal_uses_original_fallback_order) ... ok
+test_repeated_calls_do_not_retain_previous_state (test_generated_navigation_logic.GeneratedNavigationTests.test_repeated_calls_do_not_retain_previous_state) ... ok
+test_state_000000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000000) ... ok
+test_state_000001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000001) ... ok
+test_state_000010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000010) ... ok
+test_state_000011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000011) ... ok
+test_state_000100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000100) ... ok
+test_state_000101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000101) ... ok
+test_state_000110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000110) ... ok
+test_state_000111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_000111) ... ok
+test_state_001000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001000) ... ok
+test_state_001001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001001) ... ok
+test_state_001010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001010) ... ok
+test_state_001011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001011) ... ok
+test_state_001100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001100) ... ok
+test_state_001101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001101) ... ok
+test_state_001110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001110) ... ok
+test_state_001111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_001111) ... ok
+test_state_010000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010000) ... ok
+test_state_010001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010001) ... ok
+test_state_010010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010010) ... ok
+test_state_010011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010011) ... ok
+test_state_010100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010100) ... ok
+test_state_010101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010101) ... ok
+test_state_010110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010110) ... ok
+test_state_010111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_010111) ... ok
+test_state_011000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011000) ... ok
+test_state_011001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011001) ... ok
+test_state_011010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011010) ... ok
+test_state_011011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011011) ... ok
+test_state_011100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011100) ... ok
+test_state_011101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011101) ... ok
+test_state_011110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011110) ... ok
+test_state_011111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_011111) ... ok
+test_state_100000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100000) ... ok
+test_state_100001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100001) ... ok
+test_state_100010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100010) ... ok
+test_state_100011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100011) ... ok
+test_state_100100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100100) ... ok
+test_state_100101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100101) ... ok
+test_state_100110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100110) ... ok
+test_state_100111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_100111) ... ok
+test_state_101000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101000) ... ok
+test_state_101001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101001) ... ok
+test_state_101010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101010) ... ok
+test_state_101011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101011) ... ok
+test_state_101100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101100) ... ok
+test_state_101101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101101) ... ok
+test_state_101110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101110) ... ok
+test_state_101111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_101111) ... ok
+test_state_110000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110000) ... ok
+test_state_110001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110001) ... ok
+test_state_110010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110010) ... ok
+test_state_110011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110011) ... ok
+test_state_110100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110100) ... ok
+test_state_110101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110101) ... ok
+test_state_110110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110110) ... ok
+test_state_110111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_110111) ... ok
+test_state_111000 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111000) ... ok
+test_state_111001 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111001) ... ok
+test_state_111010 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111010) ... ok
+test_state_111011 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111011) ... ok
+test_state_111100 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111100) ... ok
+test_state_111101 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111101) ... ok
+test_state_111110 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111110) ... ok
+test_state_111111 (test_generated_navigation_logic.GeneratedNavigationTests.test_state_111111) ... ok
+test_teacher_example (test_generated_navigation_logic.GeneratedNavigationTests.test_teacher_example) ... ok
+test_all_64_states_and_retained_helper (tests.test_agents.DeveloperTests.test_all_64_states_and_retained_helper) ... ok
+test_developer_context_and_original_text_preserved (tests.test_agents.DeveloperTests.test_developer_context_and_original_text_preserved) ... ok
+test_invalid_plan_never_calls_model (tests.test_agents.DeveloperTests.test_invalid_plan_never_calls_model) ... ok
+test_rejects_unsafe_or_unbounded_source_before_execution (tests.test_agents.DeveloperTests.test_rejects_unsafe_or_unbounded_source_before_execution) ... ok
+test_wrong_but_valid_python_is_rejected (tests.test_agents.DeveloperTests.test_wrong_but_valid_python_is_rejected) ... ok
+test_all_generation_entrypoints_require_explicit_opt_in (tests.test_agents.FileAndRunnerTests.test_all_generation_entrypoints_require_explicit_opt_in) ... ok
+test_atomic_write_and_bom_read (tests.test_agents.FileAndRunnerTests.test_atomic_write_and_bom_read) ... ok
+test_invalid_code_does_not_overwrite_previous_artifact (tests.test_agents.FileAndRunnerTests.test_invalid_code_does_not_overwrite_previous_artifact) ... ok
+test_invalid_plan_does_not_overwrite_previous_artifact (tests.test_agents.FileAndRunnerTests.test_invalid_plan_does_not_overwrite_previous_artifact) ... ok
+test_strict_json_rejects_duplicate_fields_and_nonfinite_numbers (tests.test_agents.FileAndRunnerTests.test_strict_json_rejects_duplicate_fields_and_nonfinite_numbers) ... ok
+test_valid_runner_writes_under_project_root (tests.test_agents.FileAndRunnerTests.test_valid_runner_writes_under_project_root) ... Validated plan saved to artifacts/plan.json.
+{
+  "strategy": "Prefer a clear goal direction first, otherwise use the first unblocked fallback direction, and STOP if no direction is clear.",
+  "decisions": [
+    {
+      "when": "CLEAR_TARGET",
+      "select": "TARGET"
+    },
+    {
+      "when": "NO_CLEAR_TARGET",
+      "select": "FIRST_CLEAR"
+    }
+  ],
+  "fallback_order": [
+    "FORWARD",
+    "LEFT",
+    "RIGHT"
+  ],
+  "stop_condition": "NO_CLEAR_EXIT"
+}
+
+Generated navigation saved after 64 cases passed; artifacts and legacy mirrors updated.
+def navigate(obstacles, target=None):
+    if target is not None and not obstacles[target]:
+        return target
+    for direction in ["FORWARD", "LEFT", "RIGHT"]:
+        if not obstacles[direction]:
+            return direction
+    return "STOP"
+
+
+def decide_next_move(state):
+    obstacles = {"FORWARD": state["front_blocked"],
+                 "LEFT": state["left_blocked"], "RIGHT": state["right_blocked"]}
+    if state["goal_ahead"] and not obstacles["FORWARD"]:
+        return navigate(obstacles, "FORWARD")
+    if state["goal_on_left"] and not obstacles["LEFT"]:
+        return navigate(obstacles, "LEFT")
+    if state["goal_on_right"] and not obstacles["RIGHT"]:
+        return navigate(obstacles, "RIGHT")
+    return navigate(obstacles)
+
+ok
+test_only_the_retained_fallback_order_is_valid (tests.test_agents.PlannerTests.test_only_the_retained_fallback_order_is_valid) ... ok
+test_planner_context_is_only_validated_requirements (tests.test_agents.PlannerTests.test_planner_context_is_only_validated_requirements) ... ok
+test_rejects_every_invalid_plan_field (tests.test_agents.PlannerTests.test_rejects_every_invalid_plan_field) ... ok
+test_rejects_malformed_or_unvalidated_model_plan (tests.test_agents.PlannerTests.test_rejects_malformed_or_unvalidated_model_plan) ... ok
+test_analyst_checks_reply (tests.test_agents.RequirementTests.test_analyst_checks_reply) ... ok
+test_blank_brief_never_calls_model (tests.test_agents.RequirementTests.test_blank_brief_never_calls_model) ... ok
+test_rejects_wrong_fields_types_and_actions (tests.test_agents.RequirementTests.test_rejects_wrong_fields_types_and_actions) ... ok
+test_valid_requirement (tests.test_agents.RequirementTests.test_valid_requirement) ... ok
+test_mutation_changes_one_branch_only (tests.test_bug_demo.BugDemoTests.test_mutation_changes_one_branch_only) ... ok
+test_test_process_error_still_restores_original_bytes (tests.test_bug_demo.BugDemoTests.test_test_process_error_still_restores_original_bytes) ... ok
+test_analyst_must_match_original_brief (tests.test_evidence.EvidenceTests.test_analyst_must_match_original_brief) ... ok
+test_crlf_checkout_does_not_change_artifact_identity (tests.test_evidence.EvidenceTests.test_crlf_checkout_does_not_change_artifact_identity) ... ok
+test_full_evidence_chain (tests.test_evidence.EvidenceTests.test_full_evidence_chain) ... ok
+test_mismatched_input_extra_history_or_gpu_request_rejected (tests.test_evidence.EvidenceTests.test_mismatched_input_extra_history_or_gpu_request_rejected) ... ok
+test_missing_analyst_is_not_replaced_by_old_requirements (tests.test_evidence.EvidenceTests.test_missing_analyst_is_not_replaced_by_old_requirements) ... ok
+test_missing_exchange_is_not_treated_as_real_generation (tests.test_evidence.EvidenceTests.test_missing_exchange_is_not_treated_as_real_generation) ... ok
+test_modified_output_without_matching_exchange_rejected (tests.test_evidence.EvidenceTests.test_modified_output_without_matching_exchange_rejected) ... ok
+test_cpu_limits_proxy_bypass_and_original_exchange_recorded (tests.test_evidence.TransportTests.test_cpu_limits_proxy_bypass_and_original_exchange_recorded) ... ok
+test_empty_or_incomplete_responses_rejected (tests.test_evidence.TransportTests.test_empty_or_incomplete_responses_rejected) ... ok
+test_transport_failure_is_not_retried (tests.test_evidence.TransportTests.test_transport_failure_is_not_retried) ... ok
+test_truncated_reply_recorded_but_rejected (tests.test_evidence.TransportTests.test_truncated_reply_recorded_but_rejected) ... ok
+test_default_run_cannot_start_service (tests.test_local_session.LocalSessionTests.test_default_run_cannot_start_service) ... ok
+test_failure_stops_only_owned_service_and_records_cleanup (tests.test_local_session.LocalSessionTests.test_failure_stops_only_owned_service_and_records_cleanup) ... ok
+test_low_memory_cannot_start_service (tests.test_local_session.LocalSessionTests.test_low_memory_cannot_start_service) ... ok
+test_preexisting_service_is_left_alone (tests.test_local_session.LocalSessionTests.test_preexisting_service_is_left_alone) ... ok
+
+----------------------------------------------------------------------
+Ran 108 tests in 0.916s
+
+OK

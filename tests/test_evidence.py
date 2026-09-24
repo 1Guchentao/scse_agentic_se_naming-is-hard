@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import Mock, patch
 from urllib.error import URLError
 
+import analyst_agent
 import developer_agent
 import inspect_results
 import local_qwen
@@ -23,7 +24,7 @@ def exchange(stage, context, output, prompt):
         "request": {
             "model": local_qwen.MODEL, "stream": False, "keep_alive": 0, "options": OPTIONS.copy(),
             "messages": [{"role": "system", "content": prompt},
-                         {"role": "user", "content": json.dumps(context)}],
+                         {"role": "user", "content": context if stage == "analyst" else json.dumps(context)}],
         },
         "response": {"done": True, "done_reason": "stop", "message": {"content": output}},
     }
@@ -86,20 +87,37 @@ class EvidenceTests(unittest.TestCase):
         save_json(self.root / "artifacts" / "requirements.json", REQUIREMENTS)
         save_json(self.root / "artifacts" / "plan.json", PLAN)
         save_text(self.root / "navigation_logic.py", SOURCE)
+        save_text(self.root / "generated" / "navigation_logic.py", SOURCE)
+        save_text(self.root / "artifacts" / "navigation_logic.py", SOURCE)
+        self.analyst_path = self.root / "evidence" / "exchanges" / "analyst-fixture.json"
         self.planner_path = self.root / "evidence" / "exchanges" / "planner-fixture.json"
         self.developer_path = self.root / "evidence" / "exchanges" / "developer-fixture.json"
         self.planner = exchange("planner", REQUIREMENTS, json.dumps(PLAN), planner_agent.INSTRUCTIONS)
         self.developer = exchange("developer", PLAN, SOURCE, developer_agent.INSTRUCTIONS)
+        self.analyst = exchange("analyst", "Synthetic test brief.\n", json.dumps(REQUIREMENTS),
+                                analyst_agent.INSTRUCTIONS)
+        save_json(self.analyst_path, self.analyst)
         save_json(self.planner_path, self.planner)
         save_json(self.developer_path, self.developer)
 
     def test_full_evidence_chain(self):
         report = inspect_results.inspect(self.root)
-        self.assertEqual(report["navigation_cases"], 32)
+        self.assertEqual(report["navigation_cases"], 64)
         self.assertEqual(report["result"], "PASS")
 
     def test_missing_exchange_is_not_treated_as_real_generation(self):
         self.developer_path.unlink()
+        with self.assertRaises(ValueError):
+            inspect_results.inspect(self.root)
+
+    def test_analyst_must_match_original_brief(self):
+        self.analyst["request"]["messages"][1]["content"] = "Different brief."
+        save_json(self.analyst_path, self.analyst)
+        with self.assertRaises(ValueError):
+            inspect_results.inspect(self.root)
+
+    def test_missing_analyst_is_not_replaced_by_old_requirements(self):
+        self.analyst_path.unlink()
         with self.assertRaises(ValueError):
             inspect_results.inspect(self.root)
 

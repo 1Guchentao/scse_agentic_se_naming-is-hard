@@ -23,18 +23,30 @@ REQUIREMENTS = {
     "safe_stop": True, "avoid_obstacles": True,
 }
 PLAN = {
-    "strategy": "Prefer a clear target, otherwise take the first safe alternative; STOP if none is clear.",
+    "strategy": planner_agent.STRATEGY,
     "decisions": copy.deepcopy(planner_agent.DECISIONS),
-    "fallback_order": ["FORWARD", "RIGHT", "LEFT"],
+    "fallback_order": ["FORWARD", "LEFT", "RIGHT"],
     "stop_condition": "NO_CLEAR_EXIT",
 }
 SOURCE = '''def navigate(obstacles, target=None):
-    if target in obstacles and not obstacles[target]:
+    if target is not None and not obstacles[target]:
         return target
-    for direction in ("FORWARD", "RIGHT", "LEFT"):
+    for direction in ["FORWARD", "LEFT", "RIGHT"]:
         if not obstacles[direction]:
             return direction
     return "STOP"
+
+
+def decide_next_move(state):
+    obstacles = {"FORWARD": state["front_blocked"],
+                 "LEFT": state["left_blocked"], "RIGHT": state["right_blocked"]}
+    if state["goal_ahead"] and not obstacles["FORWARD"]:
+        return navigate(obstacles, "FORWARD")
+    if state["goal_on_left"] and not obstacles["LEFT"]:
+        return navigate(obstacles, "LEFT")
+    if state["goal_on_right"] and not obstacles["RIGHT"]:
+        return navigate(obstacles, "RIGHT")
+    return navigate(obstacles)
 '''
 
 
@@ -71,9 +83,10 @@ class RequirementTests(unittest.TestCase):
 
 
 class PlannerTests(unittest.TestCase):
-    def test_all_six_fallback_orders_are_valid(self):
+    def test_only_the_retained_fallback_order_is_valid(self):
         for order in permutations(PLAN["fallback_order"]):
-            self.assertTrue(planner_agent.validate_plan({**PLAN, "fallback_order": list(order)}))
+            self.assertEqual(planner_agent.validate_plan({**PLAN, "fallback_order": list(order)}),
+                             list(order) == ["FORWARD", "LEFT", "RIGHT"])
 
     def test_rejects_every_invalid_plan_field(self):
         invalid = [None, [], {}, {**PLAN, "extra": True}]
@@ -107,18 +120,21 @@ class PlannerTests(unittest.TestCase):
 
 
 class DeveloperTests(unittest.TestCase):
-    def test_all_32_cases_and_optional_target(self):
+    def test_all_64_states_and_retained_helper(self):
         rows = developer_agent.check_code(SOURCE, PLAN)
-        self.assertEqual(len(rows), 32)
+        self.assertEqual(len(rows), 64)
         self.assertTrue(developer_agent.validate_code(SOURCE, PLAN))
 
     def test_wrong_but_valid_python_is_rejected(self):
         for source in (
             'def navigate(obstacles, target=None):\n    return "STOP"\n',
             'def navigate(obstacles, target=None):\n    return "FORWARD"\n',
-            SOURCE.replace('"FORWARD", "RIGHT", "LEFT"', '"LEFT", "RIGHT", "FORWARD"'),
+            SOURCE.replace('"FORWARD", "LEFT", "RIGHT"', '"LEFT", "RIGHT", "FORWARD"'),
             SOURCE.replace('return target', 'return "STOP"'),
-            SOURCE.replace('if target in obstacles and not obstacles[target]:', 'if target in obstacles:'),
+            SOURCE.replace('if target is not None and not obstacles[target]:', 'if target is not None:'),
+            SOURCE.replace('return navigate(obstacles, "FORWARD")', 'return "STOP"'),
+            SOURCE.split("\n\ndef decide_next_move")[0],
+            SOURCE + '\n# Incorrect generated example\n',
         ):
             self.assertFalse(developer_agent.validate_code(source, PLAN))
 
@@ -129,7 +145,7 @@ class DeveloperTests(unittest.TestCase):
             SOURCE.replace('return target', 'return str(target)'),
             SOURCE.replace('return target', 'return target.lower()'),
             SOURCE.replace('return target', 'obstacles[target] = False\n        return target'),
-            SOURCE.replace('for direction in ("FORWARD", "RIGHT", "LEFT"):', 'for direction in obstacles:'),
+            SOURCE.replace('for direction in ["FORWARD", "LEFT", "RIGHT"]:', 'for direction in obstacles:'),
             SOURCE.replace('return target', 'while True:\n            pass'),
             SOURCE.replace('target=None', 'target="FORWARD"'),
             SOURCE.replace('navigate(', 'move('),
@@ -137,6 +153,10 @@ class DeveloperTests(unittest.TestCase):
             '```python\n' + SOURCE + '```',
             'def navigate(obstacles, target=None):\n    return [x for x in obstacles]\n',
             'def navigate(obstacles, target=None):\n    def nested():\n        pass\n    return "STOP"',
+            SOURCE.replace('return navigate(obstacles, "FORWARD")', 'return decide_next_move(state)'),
+            SOURCE.replace('return navigate(obstacles, "FORWARD")', 'return open("secret.txt")'),
+            SOURCE.replace('return navigate(obstacles, "FORWARD")', 'state["front_blocked"] = False'),
+            SOURCE.replace('return navigate(obstacles, "FORWARD")', 'while True:\n            pass'),
         ]
         for source in invalid:
             with self.subTest(source=source):
@@ -191,7 +211,8 @@ class FileAndRunnerTests(unittest.TestCase):
 
     def test_all_generation_entrypoints_require_explicit_opt_in(self):
         with tempfile.TemporaryDirectory() as temp:
-            for name in ("run_analyst.py", "run_planner.py", "run_developer.py"):
+            for name in ("run_analyst.py", "run_planner.py", "run_developer.py",
+                         "test_analyst.py", "test_planner.py", "test_developer.py"):
                 result = subprocess.run([sys.executable, str(ROOT / name)], cwd=temp,
                                         capture_output=True, text=True, timeout=10)
                 self.assertEqual(result.returncode, 2, result.stderr)
@@ -207,6 +228,8 @@ class FileAndRunnerTests(unittest.TestCase):
                 run_developer.main(["--allow-model"])
             self.assertEqual(read_json(root / "artifacts" / "plan.json"), PLAN)
             self.assertEqual((root / "navigation_logic.py").read_text(), SOURCE)
+            self.assertEqual((root / "generated" / "navigation_logic.py").read_text(), SOURCE)
+            self.assertEqual((root / "artifacts" / "navigation_logic.py").read_text(), SOURCE)
 
 
 if __name__ == "__main__":

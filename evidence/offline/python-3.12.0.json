@@ -1,0 +1,11 @@
+{
+  "run_utc": "2026-09-24T03:06:27.349359+00:00",
+  "python": "3.12.0",
+  "result": "PASS",
+  "tests_run": 108,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "log": "evidence/offline/python-3.12.0.txt",
+  "scope": "Offline behavior and infrastructure tests; real model smoke runs are recorded separately."
+}
