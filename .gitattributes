@@ -3,7 +3,15 @@
 *.txt text eol=lf
 *.md text eol=lf
 *.ps1 text eol=lf
+*.sh text eol=lf
+*.yaml text eol=lf
 *.log text eol=lf -whitespace
 *.pdf binary
 .gitignore text eol=lf
 .gitattributes text eol=lf
+# Preserve the supplied files and their captured copies byte for byte.
+test_irsim_with_agent.py -text -whitespace
+run_visual.sh -text -whitespace
+irsim_worlds/*.yaml -text -whitespace
+evidence/integration/**/test_irsim_with_agent.py -text -whitespace
+evidence/integration/**/irsim_worlds/*.yaml -text -whitespace

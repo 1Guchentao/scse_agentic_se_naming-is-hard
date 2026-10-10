@@ -1,0 +1,35 @@
+{
+  "baseline_revision": "12babed79fee86afbfb489a0db96eb6c82ccb23c",
+  "starter_repository": "https://github.com/prabhatram/project_integration_and_simulation",
+  "starter_revision": "25479e19c5f908fc2cc138c032e0ea5105777a4a",
+  "original_python": {
+    "analyst_agent.py": "ddc62bc307b96fad06b8f936475505b66328427a2a2eec8041b788f8bfe44431",
+    "developer_agent.py": "6e4c25621332f0c1c94bb71fe868e2a337907dd421b4ec0fb849c5209e3ca8a8",
+    "inspect_results.py": "b83f5c8598355e92e06a7e12b4bd268b25c2997e38e36a5e42155ef1be786022",
+    "local_qwen.py": "57fd25ff22512c089ac8359e0bff0959c726419ff13d8ac1a7bee7f96482d9c2",
+    "navigation_logic.py": "9c2c8b3368a3a43a8870dd0de415a47d0aacf03a7115fb9919caa268d38993a8",
+    "planner_agent.py": "23ca924e58747c1c64210f15f7904c426892ccc07cf9e1f76bc8c37eec0c5b30",
+    "run_analyst.py": "021fa400f9f01e87f7decdb4a475b082a2655e9efc9c727d22843aa3472028be",
+    "run_bug_demo.py": "f4fa07b708783b6b2893d1736ac67322a42e0eb6037544f1b2bf8b72ff4d1028",
+    "run_developer.py": "f5d86f1ae0c8530534376715ce10f35989fe76d449ae48d7bf3810e0b4a1a20d",
+    "run_local_pipeline.py": "2045e13be77c515653e72f9fd3d02492255793fb9aa882efacad3c94962d80ea",
+    "run_planner.py": "0803b15c812cfa9ecd8fdaec093e294300274eb4b9d1ca9d07fc7a90b7dea5fa",
+    "test_analyst.py": "aac57193c6f6892e749cf795376ec94db2e71b6e6847d4082570f0fb157c2146",
+    "test_developer.py": "43ab598e8fd7ca6f9f4385897eda8be95f5cce5d1bc6747db88d06a82d6ede10",
+    "test_generated_navigation_logic.py": "14621550612a900a3d2c623aed5b4fd3479ba13c7502f966affbbbcff4c83372",
+    "test_planner.py": "b03611b45bee28f65bdcd561b7b5cae9277b732f52175715e09c369924fece2e",
+    "try_navigation.py": "1dd246047e0dc5d564a1c355f64935dcd5eff3d2131d14138bebc62d6710298e",
+    "workspace_io.py": "aa208c7c4e29c92d78e3b82c8983a22df68cc298c9e1e950db8d57665f37676d"
+  },
+  "teacher_files": {
+    "test_irsim_with_agent.py": "b72ef9b034d0f77686d69754e2b538f1620201202c9a88b3212871984af0a934",
+    "run_visual.sh": "841ceecbd1f869cf9f5eab64b2d3daf1736d9940a104b70810f089761c4f6804",
+    "irsim_worlds/world_easy.yaml": "51ba817129039280a3f907a9e6f3d24d6530a927977030f76db5e659af0cd8de",
+    "irsim_worlds/world_medium.yaml": "bf94e0a9772f399d37692c1e8825b3cdfa77b5e8231069a72e4dcca784943063",
+    "irsim_worlds/world_hard.yaml": "d3c8db7ad6d281093affb9a2ba7c4c5322360110b039bb4040e7a0052ab1629d",
+    "irsim_worlds/world_custom.yaml": "13032370e9aada8f0436685c6f17be84e5f39ba0ede8b64b6c29ab8652d1b7b6"
+  },
+  "instructions_sha256": "44f0b2cb7e0d5514113b51b8383ad3e855d23ee9e9572dd42ef2ecad3c7c3937",
+  "text_hash": "UTF-8 with universal LF newlines",
+  "exception": "developer_agent.py may only be extended for run_developer_revision"
+}

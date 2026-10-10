@@ -6,3 +6,8 @@ __pycache__/
 *.part
 .DS_Store
 evidence/local_service.log
+.pytest_cache/
+.local/
+evidence/integration/*
+!evidence/integration/latest.json
+!evidence/integration/20261010T142530Z/

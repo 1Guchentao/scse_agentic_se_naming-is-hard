@@ -204,3 +204,57 @@ def run_developer(plan, *, trace_folder=None):
     source = ask("developer", INSTRUCTIONS, plan, trace_folder=trace_folder)
     check_code(source, plan)
     return source
+
+
+REVISION_SCHEMA = {"type": "object", "additionalProperties": False,
+                   "required": ["adapter"], "properties": {"adapter": {"type": "string"}}}
+
+REVISION_INSTRUCTIONS = """Rewrite the supplied public adapter with flatter conditions.
+Return JSON containing one key, adapter, whose string value is complete Python.
+Its first line must be: def decide_next_move(state):
+Do not include the navigate helper, imports, comments, a class or test code.
+The helper navigate is retained by the application without modification.
+Make this precise readability change even when all reviews pass:
+1. Name the local blocked-direction dictionary blocked_paths, not obstacles.
+2. Use three independent if statements with combined AND conditions, not nested ifs.
+For example, the forward branch must check state["goal_ahead"] and
+not blocked_paths["FORWARD"], then return navigate(blocked_paths, "FORWARD").
+Do the equivalent checks for LEFT and RIGHT, in that order.
+3. The last line must be return navigate(blocked_paths).
+All four returns must delegate to navigate. Never return a direction directly.
+There are exactly six state keys: front_blocked, left_blocked, right_blocked,
+goal_ahead, goal_on_left, goal_on_right. True blocked flags mean unsafe.
+Keep all decisions unchanged. No loop, comprehension, new helper or new behavior.
+The old nested conditions already passed; this revision reduces indentation
+without claiming a bug repair or a performance improvement.
+"""
+
+def run_developer_revision(original_code, review_notes, benchmark_report,
+                           requirements, plan, *, output_path, trace_folder=None):
+    from analyst_agent import validate_requirements
+    from workspace_io import decode_json, save_text
+
+    if not validate_requirements(requirements):
+        raise ValueError("Revision requires validated requirements.")
+    check_code(original_code, plan)
+    context = {"original_code": original_code, "review_notes": review_notes,
+               "benchmark_report": benchmark_report,
+               "requirements": requirements, "plan": plan}
+    response = ask("developer_revision", REVISION_INSTRUCTIONS, context,
+                   response_shape=REVISION_SCHEMA, trace_folder=trace_folder)
+    envelope = decode_json(response)
+    if not isinstance(envelope, dict) or set(envelope) != {"adapter"} or not isinstance(envelope["adapter"], str):
+        raise ValueError("Revision must return one adapter source string.")
+    adapter = envelope["adapter"]
+    tree = ast.parse(adapter)
+    if len(tree.body) != 1 or not isinstance(tree.body[0], ast.FunctionDef) or tree.body[0].name != "decide_next_move":
+        raise ValueError("Revision must contain only the public adapter.")
+    source = ORIGINAL_SOURCE.rstrip() + "\n\n" + adapter.rstrip() + "\n"
+    check_code(source, plan)
+    branches = [node for node in tree.body[0].body if isinstance(node, ast.If)]
+    if len(branches) != 3 or any(any(isinstance(child, ast.If) for child in node.body) for node in branches):
+        raise ValueError("Revision must flatten the three goal checks.")
+    if source.strip() == original_code.strip():
+        raise ValueError("The revision returned unchanged source.")
+    save_text(output_path, source)
+    return source

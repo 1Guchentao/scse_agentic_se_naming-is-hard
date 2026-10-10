@@ -1,0 +1,16 @@
+import pytest
+from itertools import product
+from navigation_under_test import decide_next_move
+
+FIELDS = ('front_blocked', 'left_blocked', 'right_blocked', 'goal_ahead', 'goal_on_left', 'goal_on_right')
+
+@ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+@ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+def test_navigation(blocked, clear_moves, goals):
+    state = dict(zip(FIELDS, blocked + goals))
+    before = state.copy()
+    indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+    targets = [move for move in clear_moves if indicated[move]]
+    expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+    assert decide_next_move(state) == expected_action
+    assert state == before

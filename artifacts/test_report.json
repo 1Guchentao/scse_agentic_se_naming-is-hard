@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "tests": 64,
+    "passed": 64,
+    "assertion_failures": 0,
+    "distinct_states": 64,
+    "exit_code": 0,
+    "control": null
+  },
+  "wrong_turn_control": {
+    "tests": 64,
+    "passed": 33,
+    "assertion_failures": 31,
+    "distinct_states": 64,
+    "exit_code": 1,
+    "control": "swapped turns"
+  }
+}

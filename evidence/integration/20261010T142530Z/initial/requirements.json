@@ -1,0 +1,11 @@
+{
+  "goal": "Navigate towards the goal position if safe and possible",
+  "allowed_actions": [
+    "FORWARD",
+    "LEFT",
+    "RIGHT",
+    "STOP"
+  ],
+  "safe_stop": true,
+  "avoid_obstacles": true
+}

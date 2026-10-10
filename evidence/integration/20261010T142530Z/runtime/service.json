@@ -1,0 +1,8 @@
+{
+  "model": "qwen2.5:3b",
+  "port": 11523,
+  "backend": "vulkan",
+  "device": 1,
+  "cpu_threads": 2,
+  "pid": 6736
+}

@@ -1,0 +1,46 @@
+Validated plan saved to artifacts/plan.json.
+{
+  "strategy": "Prefer a clear goal direction first, otherwise use the first unblocked fallback direction, and STOP if no direction is clear.",
+  "decisions": [
+    {
+      "when": "CLEAR_TARGET",
+      "select": "TARGET"
+    },
+    {
+      "when": "NO_CLEAR_TARGET",
+      "select": "FIRST_CLEAR"
+    }
+  ],
+  "fallback_order": [
+    "FORWARD",
+    "LEFT",
+    "RIGHT"
+  ],
+  "stop_condition": "NO_CLEAR_EXIT"
+}
+
+Generated navigation saved after 64 cases passed; artifacts and legacy mirrors updated.
+def navigate(obstacles, target=None):
+    if target is not None and not obstacles[target]:
+        return target
+    for direction in ["FORWARD", "LEFT", "RIGHT"]:
+        if not obstacles[direction]:
+            return direction
+    return "STOP"
+
+
+def decide_next_move(state):
+    obstacles = {"FORWARD": state["front_blocked"],
+                 "LEFT": state["left_blocked"], "RIGHT": state["right_blocked"]}
+    if state["goal_ahead"] and not obstacles["FORWARD"]:
+        return navigate(obstacles, "FORWARD")
+    if state["goal_on_left"] and not obstacles["LEFT"]:
+        return navigate(obstacles, "LEFT")
+    if state["goal_on_right"] and not obstacles["RIGHT"]:
+        return navigate(obstacles, "RIGHT")
+    return navigate(obstacles)
+
+----------------------------------------------------------------------
+Ran 108 tests in 1.190s
+
+OK

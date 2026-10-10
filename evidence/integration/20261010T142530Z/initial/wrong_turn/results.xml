@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="31" skipped="0" tests="64" time="0.372" timestamp="2026-10-10T22:26:25.990188+08:00" hostname="LAPTOP-87B9QUD4"><testcase classname="test_navigation" name="test_navigation[goals0-blocked0-clear_moves0]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals0-blocked1-clear_moves1]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals0-blocked2-clear_moves2]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals0-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals0-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (False, False, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals0-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (False, False, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals0-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (False, False, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals0-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals1-blocked0-clear_moves0]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (False, False, False), clear_moves = ('FORWARD', 'LEFT', 'RIGHT')
+goals = (False, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals1-blocked1-clear_moves1]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals1-blocked2-clear_moves2]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (False, True, False), clear_moves = ('FORWARD', 'RIGHT')
+goals = (False, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals1-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals1-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (False, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals1-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (False, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals1-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (False, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals1-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals2-blocked0-clear_moves0]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (False, False, False), clear_moves = ('FORWARD', 'LEFT', 'RIGHT')
+goals = (False, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals2-blocked1-clear_moves1]" time="0.002"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (False, False, True), clear_moves = ('FORWARD', 'LEFT')
+goals = (False, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals2-blocked2-clear_moves2]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals2-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals2-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (False, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals2-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (False, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals2-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (False, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals2-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals3-blocked0-clear_moves0]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (False, False, False), clear_moves = ('FORWARD', 'LEFT', 'RIGHT')
+goals = (False, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals3-blocked1-clear_moves1]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (False, False, True), clear_moves = ('FORWARD', 'LEFT')
+goals = (False, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals3-blocked2-clear_moves2]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (False, True, False), clear_moves = ('FORWARD', 'RIGHT')
+goals = (False, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals3-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals3-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (False, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals3-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (False, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals3-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (False, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals3-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals4-blocked0-clear_moves0]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals4-blocked1-clear_moves1]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals4-blocked2-clear_moves2]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals4-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals4-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (True, False, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals4-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (True, False, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals4-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (True, False, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals4-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals5-blocked0-clear_moves0]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals5-blocked1-clear_moves1]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals5-blocked2-clear_moves2]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals5-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals5-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (True, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals5-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (True, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals5-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (True, False, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals5-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals6-blocked0-clear_moves0]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals6-blocked1-clear_moves1]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals6-blocked2-clear_moves2]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals6-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals6-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (True, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals6-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (True, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals6-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (True, True, False)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals6-blocked7-clear_moves7]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals7-blocked0-clear_moves0]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals7-blocked1-clear_moves1]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals7-blocked2-clear_moves2]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals7-blocked3-clear_moves3]" time="0.001" /><testcase classname="test_navigation" name="test_navigation[goals7-blocked4-clear_moves4]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, False), clear_moves = ('LEFT', 'RIGHT')
+goals = (True, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals7-blocked5-clear_moves5]" time="0.001"><failure message="AssertionError: assert 'RIGHT' == 'LEFT'&#10;  &#10;  - LEFT&#10;  + RIGHT">blocked = (True, False, True), clear_moves = ('LEFT',)
+goals = (True, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'RIGHT' == 'LEFT'
+E         
+E         - LEFT
+E         + RIGHT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals7-blocked6-clear_moves6]" time="0.001"><failure message="AssertionError: assert 'LEFT' == 'RIGHT'&#10;  &#10;  - RIGHT&#10;  + LEFT">blocked = (True, True, False), clear_moves = ('RIGHT',)
+goals = (True, True, True)
+
+    @ pytest.mark.parametrize("blocked, clear_moves", [((False, False, False), ('FORWARD', 'LEFT', 'RIGHT')), ((False, False, True), ('FORWARD', 'LEFT')), ((False, True, False), ('FORWARD', 'RIGHT')), ((False, True, True), ('FORWARD',)), ((True, False, False), ('LEFT', 'RIGHT')), ((True, False, True), ('LEFT',)), ((True, True, False), ('RIGHT',)), ((True, True, True), ())])
+    @ pytest.mark.parametrize("goals", list(product((False, True), repeat=3)))
+    def test_navigation(blocked, clear_moves, goals):
+        state = dict(zip(FIELDS, blocked + goals))
+        before = state.copy()
+        indicated = dict(zip(('FORWARD', 'LEFT', 'RIGHT'), goals))
+        targets = [move for move in clear_moves if indicated[move]]
+        expected_action = (targets + list(clear_moves) + ['STOP'])[0]
+&gt;       assert decide_next_move(state) == expected_action
+E       AssertionError: assert 'LEFT' == 'RIGHT'
+E         
+E         - RIGHT
+E         + LEFT
+
+test_navigation.py:15: AssertionError</failure></testcase><testcase classname="test_navigation" name="test_navigation[goals7-blocked7-clear_moves7]" time="0.001" /></testsuite></testsuites>
