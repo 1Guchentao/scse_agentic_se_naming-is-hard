@@ -1,0 +1,26 @@
+RUN 1
+1. The navigation component must determine the direction of the next move based on the availability of paths in front, to the left, and to the right.
+2. The navigation component must prioritize moving towards the goal when a safe path is available.
+3. The navigation component must avoid moving into any blocked direction.
+4. If all directions are blocked, the navigation component must stop safely.
+5. The navigation component must be able to handle the absence of goal direction information.
+6. The navigation component must only output FORWARD, LEFT, RIGHT, or STOP as valid actions.
+7. The navigation component must be tested in multiple simulated environments to ensure reliability and safety.
+
+RUN 2
+1. The navigation component must determine the direction of the next move based on the availability of paths in front, to the left, and to the right.
+2. The navigation component must prioritize moving towards the goal when a safe path is available.
+3. The navigation component must avoid moving into any blocked direction.
+4. If all directions are blocked, the navigation component must stop safely.
+5. The navigation component must be able to handle the absence of goal direction information.
+6. The navigation component must only output FORWARD, LEFT, RIGHT, or STOP as valid actions.
+7. The navigation component must be tested in multiple simulated environments to ensure reliability and safety.
+
+RUN 3
+1. The navigation component must determine the direction of the next move based on the availability of paths in front, to the left, and to the right.
+2. The navigation component must prioritize moving towards the goal when a safe path is available.
+3. The navigation component must avoid moving into any blocked direction.
+4. If all directions are blocked, the navigation component must stop safely.
+5. The navigation component must be able to handle the absence of goal direction information.
+6. The navigation component must only output FORWARD, LEFT, RIGHT, or STOP as valid actions.
+7. The navigation component must be tested in multiple simulated environments to ensure reliability and safety.

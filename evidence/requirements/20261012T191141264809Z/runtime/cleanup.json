@@ -1,0 +1,169 @@
+{
+  "service_stopped": true,
+  "port_closed": true,
+  "monitor_fault": null,
+  "samples": [
+    {
+      "time": "2026-10-12T19:11:49.249452+00:00",
+      "available_ram_gib": 4.888,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 62
+    },
+    {
+      "time": "2026-10-12T19:11:51.375289+00:00",
+      "available_ram_gib": 3.988,
+      "gpu_free_mib": 4021,
+      "gpu_temperature_c": 66
+    },
+    {
+      "time": "2026-10-12T19:11:53.464576+00:00",
+      "available_ram_gib": 2.966,
+      "gpu_free_mib": 3861,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:11:55.544278+00:00",
+      "available_ram_gib": 2.973,
+      "gpu_free_mib": 3854,
+      "gpu_temperature_c": 73
+    },
+    {
+      "time": "2026-10-12T19:11:57.634555+00:00",
+      "available_ram_gib": 4.886,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 68
+    },
+    {
+      "time": "2026-10-12T19:11:59.714834+00:00",
+      "available_ram_gib": 4.807,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:01.804759+00:00",
+      "available_ram_gib": 4.941,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:03.881110+00:00",
+      "available_ram_gib": 4.754,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 64
+    },
+    {
+      "time": "2026-10-12T19:12:05.971055+00:00",
+      "available_ram_gib": 4.062,
+      "gpu_free_mib": 5856,
+      "gpu_temperature_c": 66
+    },
+    {
+      "time": "2026-10-12T19:12:08.051241+00:00",
+      "available_ram_gib": 2.992,
+      "gpu_free_mib": 4021,
+      "gpu_temperature_c": 69
+    },
+    {
+      "time": "2026-10-12T19:12:10.124513+00:00",
+      "available_ram_gib": 3.004,
+      "gpu_free_mib": 3854,
+      "gpu_temperature_c": 74
+    },
+    {
+      "time": "2026-10-12T19:12:12.192755+00:00",
+      "available_ram_gib": 4.916,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 69
+    },
+    {
+      "time": "2026-10-12T19:12:14.253485+00:00",
+      "available_ram_gib": 4.921,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 67
+    },
+    {
+      "time": "2026-10-12T19:12:16.322668+00:00",
+      "available_ram_gib": 4.929,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 66
+    },
+    {
+      "time": "2026-10-12T19:12:18.407051+00:00",
+      "available_ram_gib": 4.927,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 66
+    },
+    {
+      "time": "2026-10-12T19:12:20.489820+00:00",
+      "available_ram_gib": 4.945,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 66
+    },
+    {
+      "time": "2026-10-12T19:12:22.556992+00:00",
+      "available_ram_gib": 4.955,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:24.617657+00:00",
+      "available_ram_gib": 4.957,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:26.698119+00:00",
+      "available_ram_gib": 4.964,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:28.769350+00:00",
+      "available_ram_gib": 4.957,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:30.836573+00:00",
+      "available_ram_gib": 4.958,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:32.903536+00:00",
+      "available_ram_gib": 4.956,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:34.973091+00:00",
+      "available_ram_gib": 4.919,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:37.055183+00:00",
+      "available_ram_gib": 4.916,
+      "gpu_free_mib": 5862,
+      "gpu_temperature_c": 64
+    },
+    {
+      "time": "2026-10-12T19:12:39.150491+00:00",
+      "available_ram_gib": 4.827,
+      "gpu_free_mib": 5857,
+      "gpu_temperature_c": 65
+    },
+    {
+      "time": "2026-10-12T19:12:41.245309+00:00",
+      "available_ram_gib": 3.801,
+      "gpu_free_mib": 4021,
+      "gpu_temperature_c": 69
+    },
+    {
+      "time": "2026-10-12T19:12:43.348040+00:00",
+      "available_ram_gib": 3.002,
+      "gpu_free_mib": 3854,
+      "gpu_temperature_c": 76
+    }
+  ]
+}

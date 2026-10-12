@@ -11,3 +11,7 @@ evidence/local_service.log
 evidence/integration/*
 !evidence/integration/latest.json
 !evidence/integration/20261010T142530Z/
+evidence/requirements/*
+!evidence/requirements/latest.json
+!evidence/requirements/20261012T191141264809Z/
+evidence/requirements/*/runtime/service.log

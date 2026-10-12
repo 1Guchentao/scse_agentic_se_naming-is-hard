@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "runs": 3,
+  "started_at": "2026-10-12T19:11:41.264809+00:00",
+  "purpose": "Missing initial prose exercise completed on the recorded date; not an earlier run.",
+  "source_sha256": "40e32428cb02b1c0b6f9f0ca37b1047cb74809dc23c02c96ef87debd197eb9b4",
+  "identical_text": true,
+  "completed_at": "2026-10-12T19:12:46.668597+00:00"
+}

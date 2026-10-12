@@ -1,0 +1,38 @@
+Initial requirements exercise
+
+The original group repository did not contain brief_to_req.py or
+robot_requirements.txt. This missing exercise was completed on 13 October
+2026 (Asia/Shanghai), separately from the earlier JSON-agent work. The
+recorded timestamps use UTC. It is not presented as a September run.
+
+brief_to_req.py reads the original brief and sends it to local qwen2.5:3b
+three times. robot_requirements.txt contains those responses without
+rewriting their wording. The three numbered lists were identical with the
+recorded deterministic settings. This is evidence for these three runs,
+not a guarantee that every model or prompt gives identical text.
+
+Each list includes blocked-path inputs, safe goal preference, obstacle
+avoidance, stopping, optional goal information, the four permitted actions,
+and simulation testing. These paragraphs are understandable by a person,
+but not a dependable machine interface. The later Analyst therefore uses
+the four-field JSON contract before the Planner consumes the requirements.
+
+The raw requests, replies, source snapshot, hardware samples and cleanup
+record are under evidence/requirements/20261012T191141264809Z. GPU loading
+was checked by the existing session helper, CPU math was limited to two
+threads, and the private service closed afterwards. No cloud key was used.
+The existing requirements.json, plans, navigation code and Integration
+results were not replaced.
+
+Inspect the saved exercise without a model:
+  python brief_to_req.py --verify
+
+Repeat it explicitly with an existing compatible local setup:
+  python brief_to_req.py --allow-model --runs 3
+
+Use the same virtual environment and GPU setup described in the project
+README. Device 1 is specific to the machine used for this recorded run.
+
+The previously exposed cloud credential is a separate unresolved item.
+Revocation has not been confirmed; the account owner must check the service
+console. Deleting a current source line does not remove an old Git commit.
